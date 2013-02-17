@@ -10,6 +10,12 @@ module.exports  = (app) ->
   app.all '/', (req, res, next)->
     routeMvc('index', 'index', req, res, next)
 
+  app.all '/spaces/:namespace', (req, res, next)->
+    routeMvc('spaces', 'index', req, res, next)
+
+  app.all '/spaces/:namespace/:method', (req, res, next)->
+    routeMvc('spaces', req.params.method, req,res,next)
+
   #   - _/**:controller**_  -> controllers/***:controller***/index method
   app.all '/:controller' , (req, res, next)->
     routeMvc(req.params.controller, 'index',req,res, next)

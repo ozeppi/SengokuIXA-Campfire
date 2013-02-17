@@ -1,0 +1,12 @@
+extends layout
+block content
+  .container
+    .span10
+      div
+        form(action='#{namespace}/add', method="POST")
+          input(type='text', name='x', tabindex='1')
+          input(type='text', name='y', tabindex='2')
+          input(type='submit', value='add', tabindex='3')
+      div
+        for camp in campList
+          p #{camp.x},#{camp.y} posted #{camp.user}
