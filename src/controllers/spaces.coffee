@@ -17,6 +17,9 @@ module.exports =
             }
 
     add: (req, res)->
+        unless req.body.x && req.body.y
+            res.send 'Invalid parameters. Please check x and y'
+            res.statusCode = 500
         camp = new Camp (
             namespace: req.params.namespace
             x: req.body.x
