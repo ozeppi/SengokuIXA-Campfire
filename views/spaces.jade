@@ -2,7 +2,11 @@ extends layout
 block content
   .container
     .span10
-      h1.span9 Sengoku-IXA Campfire
+      h1.span10 Sengoku-IXA Campfire
+      .span10.line 陣張りで被らないようにするためのツールです。
+      .span10.line x座標の欄に「2,3」と入れてEnterを押すとx座標とy座標に自動で分解するのでコピペ時に便利です。（もちろんxとyにそれぞれ値を入れてもいいです
+      .span10.line 既にその座標に陣を張っている人がいる場合は送信に失敗するので、何も考えず座標を入力し送信を押してください。
+      .span10.line 自分が投稿したもののみ削除することができます。
       form.span9.form-inline.coordForm(action='#{namespace}/add', method="POST")
         input.input-small(id='x', type='text', name='x', tabindex='1', placeholder='x座標', autofocus='autofocus')
         input.input-small(id='y', type='text', name='y', tabindex='2', placeholder='y座標')
