@@ -2,11 +2,23 @@ extends layout
 block content
   .container
     .span10
-      div
-        form(action='#{namespace}/add', method="POST")
-          input(type='text', name='x', tabindex='1')
-          input(type='text', name='y', tabindex='2')
-          input(type='submit', value='add', tabindex='3')
-      div
-        for camp in campList
-          p #{camp.x},#{camp.y} posted #{camp.user}
+      h1.span9 Sengoku-IXA Campfire
+      form.span9.form-inline.coordForm(action='#{namespace}/add', method="POST")
+        input.input-small(id='x', type='text', name='x', tabindex='1', placeholder='x座標', autofocus='autofocus')
+        input.input-small(id='y', type='text', name='y', tabindex='2', placeholder='y座標')
+        input.btn(id='submitButton', type='submit', value='送信', tabindex='3')
+      for camp in campList
+        if identity === camp.user
+          .span1
+            span(id='#{camp.x}_#{camp.y}', class='coord') #{camp.x},#{camp.y}
+          .span8
+            form(action='#{namespace}/delete', method='POST')
+              input.btn(type='submit', value='delete')
+              input(type='hidden', name='x', value='#{camp.x}')
+              input(type='hidden', name='y', value='#{camp.y}')
+              input(type='hidden', name='namespace', value='#{namespace}')
+        else
+          .span9
+            span(id='#{camp.x}_#{camp.y}', class='coord') #{camp.x},#{camp.y}
+        .span9
+          hr
