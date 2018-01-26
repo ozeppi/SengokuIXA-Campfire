@@ -22,7 +22,7 @@ This is a template that can be used to create nodejs applications using
 * [CoffeeScript](http://coffeescript.org)
 * [Jade](http://jade-lang.com/)
 * [connect-assets](http://github.com/TrevorBurnham/connect-assets)
-* [Mocha](http://visionmedia.github.com/mocha/)
+* [Mocha](http://mochajs.org/)
 * [Should.Js](https://github.com/visionmedia/should.js/)
 * [Mongoose](https://github.com/LearnBoost/mongoose)
 * [Foundation](http://foundation.zurb.com/)
@@ -65,7 +65,7 @@ cake dev
 
 mocha is an extremely powerful and easy to use testing framework
 
-see [http://visionmedia.github.com/mocha/](http://visionmedia.github.com/mocha/)
+see [http://mochajs.org/](http://mochajs.org/)
 
     describe 'Sample test', ->
       it 'should be true', ->
